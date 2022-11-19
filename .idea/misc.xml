@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1925" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1925" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/ic_logo_page.xml" value="0.1925" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layout_bottom_round_rect_pink.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layout_right_round_rect_white.xml" value="0.12" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layout_round_rect_pink.xml" value="0.1925" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layout_round_rect_white.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layout_rounded_rectangle.xml" value="0.1045" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/layput_round_rect_pink.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/drawable/spash_screen.xml" value="0.1925" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_check_menu.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_food_demand.xml" value="0.184375" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_login.xml" value="0.184375" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_manage_worker.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_request_recieved.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_admin_sell_coupon.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_food_demand.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_onboarding.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_check_menu.xml" value="0.184375" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_check_refund.xml" value="0.184375" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_dashboard.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_feedback.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_mark_absence.xml" value="0.184375" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_student_special_request.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_worker_check_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_worker_dashboard.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_worker_food_demand_activiry.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_worker_special_request.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_workey_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/layout_circle.xml" value="0.125" />
+        <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_check_menu.xml" value="0.1265625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

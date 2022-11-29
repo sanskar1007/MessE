@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/layout_round_rect_white">
+        <TextView
+            android:id="@+id/specialRequestItemId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="Sudhir Singh (work096)"
+            android:gravity="center_horizontal"
+            android:textSize="32sp" />
+        <TextView
+            android:id="@+id/specialRequestItemBar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:text=""
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/specialRequestItemText"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/specialRequestItemAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:textSize="20sp"
+                android:text="ACCEPT"
+                android:background="@drawable/layout_bottom_left_round_rect_white"/>
+
+            <Button
+                android:id="@+id/specialRequestItemDecline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:textSize="20sp"
+                android:text="DECLINE"
+                android:background="@drawable/layout_bottom_right_round_rect_white"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

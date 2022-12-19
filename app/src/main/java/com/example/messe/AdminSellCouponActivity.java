@@ -109,8 +109,6 @@ public class AdminSellCouponActivity extends AppCompatActivity {
             adminSellCouponNameEditText.setText("");
             adminSellCouponReasonEditText.setText("");
             adminSellCouponCount.setText("1");
-            // please add to the database the current request with
-            // name, reason, count, meal
         }
     }
 }

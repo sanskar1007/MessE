@@ -4,7 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     tools:context=".AdminManageInventoryActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="365dp">
+
+        <FrameLayout
+            android:id="@+id/adminManageInventoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_alignTop="@id/adminManageInventorySelectFragmentButton"/>
+
+        <LinearLayout
+            android:id="@+id/adminManageInventorySelectFragmentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/adminManageInventoryUtilitiesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/layout_bottom_round_rect_white"
+                android:text="Utilities"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/adminManageInventoryStoredButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/layout_bottom_round_rect_white"
+                android:text="Stored"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/adminManageInventoryDailyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/layout_bottom_round_rect_white"
+                android:text="Daily"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

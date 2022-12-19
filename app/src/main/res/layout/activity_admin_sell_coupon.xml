@@ -4,6 +4,161 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminSellCouponActivity">
+    tools:context=".AdminSellCouponActivity"
+    android:background="#F0516F">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/imageView3"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/admin_coupon" />
+
+        <LinearLayout
+            android:background="@drawable/layout_round_rect_white"
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/adminSellCouponDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Date: 12.12.2022"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/adminSellCouponBar"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/adminSellCouponNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Name"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"/>
+            <EditText
+                android:id="@+id/adminSellCouponNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jhon Doe"
+                android:text=""
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/adminSellCouponReasonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reason to buy coupon"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"/>
+            <EditText
+                android:id="@+id/adminSellCouponReasonEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="My parents want to have lunch"
+                android:text=""
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/adminSellCouponTypeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select meal type"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"/>
+
+            <Spinner
+                android:id="@+id/adminSellCouponSpinner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                tools:ignore="MissingConstraints"/>
+
+            <TextView
+                android:id="@+id/adminSellCouponQuatityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select quantity"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/adminSellCouponDecreaseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:text="-"
+                    android:textSize="20dp"
+                    android:onClick="decreaseCoupon"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/layout_round_rect_pink"/>
+
+                <TextView
+                    android:id="@+id/adminSellCouponCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" />
+
+                <Button
+                    android:id="@+id/adminSellCouponIncreaseButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:text="+"
+                    android:textSize="20dp"
+                    android:onClick="increaseCoupon"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/layout_round_rect_pink"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/adminSellCouponButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:background="@drawable/layout_round_rect_pink"
+                android:paddingLeft="50dp"
+                android:paddingTop="10dp"
+                android:paddingRight="50dp"
+                android:paddingBottom="10dp"
+                android:text="SUBMIT"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:onClick="submit"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

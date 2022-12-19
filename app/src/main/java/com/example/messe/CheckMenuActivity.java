@@ -26,7 +26,7 @@ public class CheckMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_check_menu);
         Spinner workerCheckMenuSpinner = (Spinner) findViewById(R.id.checkMenuSpinner);
         ArrayAdapter<String> daysAdapter = new ArrayAdapter<>(CheckMenuActivity.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.days));
+                R.layout.background_spinner_white, getResources().getStringArray(R.array.days));
         daysAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         workerCheckMenuSpinner.setAdapter(daysAdapter);
 
@@ -35,10 +35,10 @@ public class CheckMenuActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String day=workerCheckMenuSpinner.getSelectedItem().toString();
                 Log.w("TAG", day);
-                BreakfastText=findViewById(R.id.checkMenuBreakfastText);
-                LunchText=findViewById(R.id.checkMenuLunchText);
-                SnacksText=findViewById(R.id.checkMenuSnacksText);
-                DinnerText=findViewById(R.id.checkMenuDinnerText);
+                BreakfastText = findViewById(R.id.checkMenuBreakfastText);
+                LunchText = findViewById(R.id.checkMenuLunchText);
+                SnacksText = findViewById(R.id.checkMenuSnacksText);
+                DinnerText = findViewById(R.id.checkMenuDinnerText);
                 db.collection("menu").whereEqualTo("Day",day).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -56,7 +56,6 @@ public class CheckMenuActivity extends AppCompatActivity {
                         }
                     }
                 });
-
             }
 
             @Override

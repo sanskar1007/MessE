@@ -31,8 +31,12 @@ public class AdapterSpecialRequest extends RecyclerView.Adapter<AdapterSpecialRe
     @Override
     public void onBindViewHolder(@NonNull ViewHolderSpecailRequest holder, int position) {
         ItemSpecialRequest itemSpecialRequest = specialRequestArrayList.get(position);
+        // form the header of the special request
         String id = "" + itemSpecialRequest.firstName + " " + itemSpecialRequest.lastName + " (" + itemSpecialRequest.reqId + ")";
+
+        // add the "id" to the layout
         holder.specialRequestItemId.setText(id);
+        // add the "message" to the layout
         holder.specialRequestItemText.setText(itemSpecialRequest.reqMessage);
     }
 

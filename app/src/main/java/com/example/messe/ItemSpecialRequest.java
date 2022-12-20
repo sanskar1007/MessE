@@ -5,12 +5,13 @@ public class ItemSpecialRequest {
     String lastName;
     String reqId;
     String reqMessage;
-    Boolean status;
+    String date;
+    String status;
 
     // constructors
     public ItemSpecialRequest(){}
 
-    public ItemSpecialRequest(String firstName, String lastName, String reqId, String reqMessage, Boolean status) {
+    public ItemSpecialRequest(String firstName, String lastName, String reqId, String reqMessage, String status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.reqId = reqId;
@@ -23,12 +24,12 @@ public class ItemSpecialRequest {
     public String getLastName() {return lastName;}
     public String getReqId() {return reqId;}
     public String getReqMessage() {return reqMessage;}
-    public Boolean getStatus() {return status;}
+    public String getStatus() {return status;}
 
     // setters
     public void setFirstName(String firstName) {this.firstName = firstName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
     public void setReqId(String reqId) {this.reqId = reqId;}
     public void setReqMessage(String reqMessage) {this.reqMessage = reqMessage;}
-    public void setStatus(Boolean status) {this.status = status;}
+    public void setStatus(String status) {this.status = status;}
 }

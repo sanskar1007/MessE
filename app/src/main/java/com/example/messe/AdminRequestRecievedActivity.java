@@ -44,9 +44,15 @@ public class AdminRequestRecievedActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
                             for(QueryDocumentSnapshot document : task.getResult()){
-                                ItemSpecialRequest req= (ItemSpecialRequest) document.get(String.valueOf(ItemSpecialRequest.class));
-                                Log.w("done","done");
-                                if(document.get("status").toString()=="Null") worker.add(req);
+//                                ItemSpecialRequest req= (ItemSpecialRequest) document.get(String.valueOf(ItemSpecialRequest.class));
+//                                Log.w("done","done");
+//                                if(document.get("status").toString()=="Null") worker.add(req);
+                                String firstName=document.get("firstName").toString();
+                                String lastName=document.get("lastName").toString();
+                                String reqId=document.get("reqId").toString();
+                                String reqMessage=document.get("reqMessage").toString();
+                                String status=document.get("status").toString();
+                                Log.w("first",firstName);
                             }
                         }
                     }
@@ -66,9 +72,15 @@ public class AdminRequestRecievedActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
                             for(QueryDocumentSnapshot document : task.getResult()){
-                                ItemSpecialRequest req= (ItemSpecialRequest) document.get(String.valueOf(ItemSpecialRequest.class));
-                                Log.w("done","done");
-                                if(document.get("status").toString()=="Null") student.add(req);
+//                                ItemSpecialRequest req= (ItemSpecialRequest) document.get(String.valueOf(ItemSpecialRequest.class));
+//                                Log.w("done","done");
+//                                if(document.get("status").toString()=="Null") student.add(req);
+                                String firstName=document.get("firstName").toString();
+                                String lastName=document.get("lastName").toString();
+                                String reqId=document.get("reqId").toString();
+                                String reqMessage=document.get("reqMessage").toString();
+                                String status=document.get("status").toString();
+                                Log.w("first",firstName);
                             }
                         }
                     }

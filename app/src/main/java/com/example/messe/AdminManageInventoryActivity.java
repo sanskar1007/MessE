@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,38 +24,22 @@ public class AdminManageInventoryActivity extends AppCompatActivity {
         utilitiesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                utilitiesButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_pink));
-                storedButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                dailyButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                replaceFragment(new AdminManageInventoryUtilitiesFragment());
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryUtilitiesActivity.class));
             }
         });
 
         storedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                utilitiesButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                storedButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_pink));
-                dailyButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                replaceFragment(new AdminManageInventoryStoredFragment());
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryStoredActivity.class));
             }
         });
 
         dailyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                utilitiesButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                storedButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_white));
-                dailyButton.setBackground(getResources().getDrawable(R.drawable.layout_bottom_round_rect_pink));
-                replaceFragment(new AdminManageInventoryDailyFragment());
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryDailyActivity.class));
             }
         });
-    }
-
-    public void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.adminManageInventoryFragment, fragment);
-        fragmentTransaction.commit();
     }
 }

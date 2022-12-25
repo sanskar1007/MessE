@@ -1,16 +1,12 @@
 package com.example.messe;
 
 public class ItemSpecialRequest {
-    String firstName;
-    String lastName;
-    String reqId;
-    String reqMessage;
-    String date;
-    String status;
-
-    // constructors
-    public ItemSpecialRequest(){}
-
+    private String firstName;
+    private String lastName;
+    private String reqId;
+    private String reqMessage;
+    private String date;
+    private String status;
     public ItemSpecialRequest(String firstName, String lastName, String reqId, String reqMessage, String status) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -18,7 +14,6 @@ public class ItemSpecialRequest {
         this.reqMessage = reqMessage;
         this.status = status;
     }
-
     // getters
     public String getFirstName() {return firstName;}
     public String getLastName() {return lastName;}

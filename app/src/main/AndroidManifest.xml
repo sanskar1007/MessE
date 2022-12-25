@@ -14,6 +14,21 @@
         android:theme="@style/Theme.MessE"
         tools:targetApi="31">
         <activity
+            android:name=".AdminManageInventoryDailyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageInventoryStoredActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageInventoryUtilitiesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminRequestRecievedStudentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminRequestRecievedWorkerActivity"
+            android:exported="false" />
+        <activity
             android:name=".FoodDemandActivity"
             android:exported="false" />
         <activity

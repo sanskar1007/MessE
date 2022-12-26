@@ -12,10 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdapterSpecialRequest extends RecyclerView.Adapter<AdapterSpecialRequest.SpecialRequestViewHolder> {
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ArrayList<ItemSpecialRequest> arrayList;
     public AdapterSpecialRequest(ArrayList<ItemSpecialRequest> arrayList){
         this.arrayList=arrayList;
@@ -49,6 +58,18 @@ public class AdapterSpecialRequest extends RecyclerView.Adapter<AdapterSpecialRe
                     holder.srAccept.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_green);
                     holder.srDecline.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_black);
                     // update status in the database
+                    Map<String,Object> request=new HashMap<>();
+                    request.put("status","True");
+                    db.collection("special_request_student").whereEqualTo("reqMessage",rMessage).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                                String documentID= DocumentSnapshot.getId();
+                                db.collection("special_request_student").document(documentID).update(request);
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -60,6 +81,18 @@ public class AdapterSpecialRequest extends RecyclerView.Adapter<AdapterSpecialRe
                     holder.srDecline.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);
                     holder.srAccept.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
                     // update status in the database
+                    Map<String,Object> request=new HashMap<>();
+                    request.put("status","False");
+                    db.collection("special_request_student").whereEqualTo("reqMessage",rMessage).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                                String documentID= DocumentSnapshot.getId();
+                                db.collection("special_request_student").document(documentID).update(request);
+                            }
+                        }
+                    });
                 }
             }
         });

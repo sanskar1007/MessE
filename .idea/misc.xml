@@ -41,12 +41,14 @@
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_left_round_rect_black.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_left_round_rect_green.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_right_round_rect_black.xml" value="0.1" />
-        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_add.xml" value="0.22" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_daily.xml" value="0.15806159420289856" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_worker.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved.xml" value="0.15555555555555556" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved_student.xml" value="0.13903985507246377" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved_worker.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_sell_coupon.xml" value="0.12817028985507245" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_student.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_student1.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_worker.xml" value="0.1" />

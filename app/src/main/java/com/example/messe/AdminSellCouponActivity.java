@@ -90,7 +90,6 @@ public class AdminSellCouponActivity extends AppCompatActivity {
             coupon.put("meal", meal);
             coupon.put("count", count);
 
-// Add a new document with a generated ID
             db.collection("coupons")
                     .add(coupon)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -109,6 +108,7 @@ public class AdminSellCouponActivity extends AppCompatActivity {
             adminSellCouponNameEditText.setText("");
             adminSellCouponReasonEditText.setText("");
             adminSellCouponCount.setText("1");
+            Toast.makeText(this, "Request Successful", Toast.LENGTH_SHORT).show();
         }
     }
 }

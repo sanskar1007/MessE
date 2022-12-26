@@ -17,28 +17,28 @@ public class AdminManageInventoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_manage_inventory);
 
-        Button utilitiesButton = findViewById(R.id.adminManageInventoryUtilitiesButton);
-        Button storedButton = findViewById(R.id.adminManageInventoryStoredButton);
-        Button dailyButton = findViewById(R.id.adminManageInventoryDailyButton);
+        Button orderButton = findViewById(R.id.adminManageInventoryOrderButton);
+        Button updateButton = findViewById(R.id.adminManageInventoryUpdateButton);
+        Button addButton = findViewById(R.id.adminManageInventoryAddButton);
 
-        utilitiesButton.setOnClickListener(new View.OnClickListener() {
+        orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryUtilitiesActivity.class));
             }
         });
 
-        storedButton.setOnClickListener(new View.OnClickListener() {
+        updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryStoredActivity.class));
             }
         });
 
-        dailyButton.setOnClickListener(new View.OnClickListener() {
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryDailyActivity.class));
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryAddActivity.class));
             }
         });
     }

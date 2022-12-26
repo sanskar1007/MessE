@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/layout_round_rect_white">
+
+        <TextView
+            android:id="@+id/manageWorkerItemId"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Sudhir Singh (work096)"
+            android:gravity="center_horizontal"
+            android:textSize="26sp" />
+        <TextView
+            android:id="@+id/manageWorkerItemBar1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:text=""
+            android:background="@color/colorPrimary"/>
+
+        <RatingBar
+            android:id="@+id/manageWorkerRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:stepSize="1"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:progressBackgroundTint="@color/black"
+            android:progressTint="@color/colorPrimary"
+            android:rating="0"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/manageWorkerItemPresent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:text="PRESENT"
+                android:background="@drawable/layout_bottom_left_round_rect_white"/>
+
+            <Button
+                android:id="@+id/manageWorkerItemAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:text="ABSENT"
+                android:background="@drawable/layout_bottom_right_round_rect_white"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

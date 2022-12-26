@@ -32,14 +32,6 @@ public class AdminRequestRecievedStudentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_request_recieved_student);
 
         initData();
-        Log.e("", "out now");
-
-//        arrayList.add(new ItemSpecialRequest("Pranjal", "Gupta", "1", "I want fried idli", "Null"));
-//        arrayList.add(new ItemSpecialRequest("Sanskar", "Khandelwal", "2", "I want fried idli 2", "Null"));
-//        arrayList.add(new ItemSpecialRequest("Rohit", "Gupta", "3", "I want fried idli 3", "Null"));
-//        arrayList.add(new ItemSpecialRequest("Umang", "Goyal", "4", "I want fried idli 4", "Null"));
-//
-//        Log.e("", "out now");
         recyclerViewWorker = findViewById(R.id.adminRequestRecievedStudentRecyclerView);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);

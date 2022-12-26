@@ -11,59 +11,52 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.common.util.concurrent.SimpleTimeLimiter;
+import com.google.common.util.concurrent.TimeLimiter;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Duration;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeoutException;
 
 public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    RecyclerView rv;
-    LinearLayoutManager llm;
+    RecyclerView recyclerViewWorker;
+    LinearLayoutManager layoutManager;
     ArrayList<ItemSpecialRequest> arrayList = new ArrayList<>();
-    AdapterSpecialRequest ad;
+    AdapterSpecialRequest adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_request_recieved_worker);
 
-//        String date = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
-//        db.collection("special_request_worker").whereEqualTo("Date",date).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                if(task.isSuccessful()){
-//                    for(QueryDocumentSnapshot document : task.getResult()){
-//                        String fn=document.get("firstName").toString();
-//                        String ln=document.get("lastName").toString();
-//                        String ri=document.get("reqId").toString();
-//                        String rm=document.get("reqMessage").toString();
-//                        String st=document.get("status").toString();
-//                        Log.e("", fn+ln+ri+rm+st);
-//                        ItemSpecialRequest temp = new ItemSpecialRequest(fn, ln, ri, rm, st);
-//                        arrayList.add(temp);
-//                        Log.v("", "" + arrayList.size() + " " + temp.getFirstName());
-//                    }
-//                }
-//            }
-//        });
-        arrayList.add(new ItemSpecialRequest("Pranjal", "Gupta", "1", "I want fried idli", "Null"));
-        arrayList.add(new ItemSpecialRequest("Sanskar", "Khandelwal", "2", "I want fried idli 2", "True"));
-        arrayList.add(new ItemSpecialRequest("Rohit", "Gupta", "3", "I want fried idli 3", "Null"));
-        arrayList.add(new ItemSpecialRequest("Umang", "Goyal", "4", "I want fried idli 4", "False"));
-        arrayList.add(new ItemSpecialRequest("Kartik", "Singhal", "5", "I want fried idli 5", "Null"));
+        //initData();
+        Log.e("", "out now");
 
-        rv = findViewById(R.id.adminRequestRecievedWorkerRecyclerView);
-        llm = new LinearLayoutManager(this);
-        llm.setOrientation(RecyclerView.VERTICAL);
-        rv.setLayoutManager(llm);
-        ad = new AdapterSpecialRequest(arrayList);
-        rv.setAdapter(ad);
-        ad.notifyDataSetChanged();
+        arrayList.add(new ItemSpecialRequest("Pranjal", "Gupta", "1", "I want fried idli", "Null"));
+        arrayList.add(new ItemSpecialRequest("Sanskar", "Khandelwal", "2", "I want fried idli 2", "Null"));
+        arrayList.add(new ItemSpecialRequest("Rohit", "Gupta", "3", "I want fried idli 3", "Null"));
+        arrayList.add(new ItemSpecialRequest("Umang", "Goyal", "4", "I want fried idli 4", "Null"));
+        arrayList.add(new ItemSpecialRequest("Kartik", "Singhal", "5", "I want fried idli 5", "Null"));
+        Log.e("", "out now");
+        recyclerViewWorker = findViewById(R.id.adminRequestRecievedWorkerRecyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerViewWorker.setLayoutManager(layoutManager);
+        adapter = new AdapterSpecialRequest(arrayList);
+        recyclerViewWorker.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
     private void initData() {
         String date = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
@@ -72,11 +65,11 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
                     for(QueryDocumentSnapshot document : task.getResult()){
-                        String fn=document.get("firstName").toString();
-                        String ln=document.get("lastName").toString();
-                        String ri=document.get("reqId").toString();
-                        String rm=document.get("reqMessage").toString();
-                        String st=document.get("status").toString();
+                        String fn = document.get("firstName").toString();
+                        String ln = document.get("lastName").toString();
+                        String ri = document.get("reqId").toString();
+                        String rm = document.get("reqMessage").toString();
+                        String st = document.get("status").toString();
                         Log.e("", fn+ln+ri+rm+st);
                         ItemSpecialRequest temp = new ItemSpecialRequest(fn, ln, ri, rm, st);
                         arrayList.add(temp);

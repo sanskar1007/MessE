@@ -24,14 +24,14 @@ public class AdminManageInventoryActivity extends AppCompatActivity {
         orderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryUtilitiesActivity.class));
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryOrderActivity.class));
             }
         });
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryStoredActivity.class));
+                startActivity(new Intent(AdminManageInventoryActivity.this, AdminManageInventoryUpdateActivity.class));
             }
         });
 

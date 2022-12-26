@@ -14,16 +14,13 @@
         android:theme="@style/Theme.MessE"
         tools:targetApi="31">
         <activity
+            android:name=".AdminManageInventoryOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManageInventoryUpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminManageInventoryAddActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminManageInventoryDailyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminManageInventoryStoredActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminManageInventoryUtilitiesActivity"
             android:exported="false" />
         <activity
             android:name=".AdminRequestRecievedStudentActivity"

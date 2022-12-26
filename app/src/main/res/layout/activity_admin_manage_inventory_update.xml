@@ -4,104 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminManageInventoryAddActivity"
+    tools:context=".AdminManageInventoryUpdateActivity"
     android:background="@color/colorPrimary">
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:background="@drawable/layout_round_rect_white"
-            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/layout_round_rect_white"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/adminManageInventoryAddTextView"
+                android:id="@+id/adminManageInventoryUpdateTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="10dp"
-                android:text="ADD INVENTORY"
+                android:text="UPDATE INVENTORY"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/adminManageInventoryAddBar"
+                android:id="@+id/adminManageInventoryUpdateBar"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary"
                 android:text="" />
 
             <TextView
-                android:id="@+id/adminManageInventoryAddTypeText"
+                android:id="@+id/adminManageInventoryUpdateTypeText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select inventory type"
                 android:paddingLeft="24dp"
-                android:paddingTop="20dp"/>
+                android:paddingTop="20dp"
+                android:text="Select inventory type" />
 
             <Spinner
-                android:id="@+id/adminManageInventoryAddSpinner"
+                android:id="@+id/adminManageInventoryUpdateTypeSpinner"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/adminSellCouponNameText"
+                android:id="@+id/adminManageInventoryUpdateNameText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter inventory name"
                 android:paddingLeft="24dp"
-                android:paddingTop="20dp"/>
-            <EditText
-                android:id="@+id/adminManageInventoryAddNameEditText"
-                android:layout_width="match_parent"
+                android:paddingTop="20dp"
+                android:text="Select inventory name" />
+
+            <Spinner
+                android:id="@+id/adminManageInventoryUpdateNameSpinner"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Glasses"
-                android:text=""
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginTop="5dp"
+                tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/adminManageInventoryAddQuantityText"
+                android:id="@+id/adminManageInventoryUpdateCurrentQuantityText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter current quantity"
                 android:paddingLeft="24dp"
-                android:paddingTop="20dp"/>
-            <EditText
-                android:id="@+id/adminManageInventoryAddQuantityEditText"
+                android:paddingTop="20dp"
+                android:text="Current quantity" />
+
+            <TextView
+                android:id="@+id/adminManageInventoryUpdateQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="1"
-                android:text="1"
+                android:hint="4"
+                android:paddingLeft="24dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/adminManageInventoryUpdateNewQuantityText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingTop="20dp"
+                android:text="Enter new quantity" />
+
+            <EditText
+                android:id="@+id/adminManageInventoryUpdateNewQuantityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:inputType="number"/>
+                android:hint="My parents want to have lunch"
+                android:inputType="number"
+                android:text="1" />
+
 
             <Button
-                android:id="@+id/adminManageInventoryAddButton"
+                android:id="@+id/adminManageInventoryUpdateButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="20dp"
                 android:background="@drawable/layout_round_rect_pink"
+                android:onClick="submit"
                 android:paddingLeft="50dp"
                 android:paddingTop="10dp"
                 android:paddingRight="50dp"
                 android:paddingBottom="10dp"
                 android:text="SUBMIT"
-                android:textSize="20sp"
                 android:textColor="@color/white"
-                android:onClick="submit"/>
+                android:textSize="20sp" />
 
         </LinearLayout>
     </LinearLayout>

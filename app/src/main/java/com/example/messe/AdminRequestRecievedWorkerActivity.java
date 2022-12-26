@@ -41,22 +41,21 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_request_recieved_worker);
 
-        //initData();
-        Log.e("", "out now");
+        initData();
+        Log.e("abc", "out now");
 
-        arrayList.add(new ItemSpecialRequest("Pranjal", "Gupta", "1", "I want fried idli", "Null"));
-        arrayList.add(new ItemSpecialRequest("Sanskar", "Khandelwal", "2", "I want fried idli 2", "Null"));
-        arrayList.add(new ItemSpecialRequest("Rohit", "Gupta", "3", "I want fried idli 3", "Null"));
-        arrayList.add(new ItemSpecialRequest("Umang", "Goyal", "4", "I want fried idli 4", "Null"));
-        arrayList.add(new ItemSpecialRequest("Kartik", "Singhal", "5", "I want fried idli 5", "Null"));
-        Log.e("", "out now");
+//        arrayList.add(new ItemSpecialRequest("Pranjal", "Gupta", "1", "I want fried idli", "Null"));
+//        arrayList.add(new ItemSpecialRequest("Sanskar", "Khandelwal", "2", "I want fried idli 2", "Null"));
+//        arrayList.add(new ItemSpecialRequest("Rohit", "Gupta", "3", "I want fried idli 3", "Null"));
+//        arrayList.add(new ItemSpecialRequest("Umang", "Goyal", "4", "I want fried idli 4", "Null"));
+//        arrayList.add(new ItemSpecialRequest("Kartik", "Singhal", "5", "I want fried idli 5", "Null"));
+//        Log.e("", "out now");
         recyclerViewWorker = findViewById(R.id.adminRequestRecievedWorkerRecyclerView);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewWorker.setLayoutManager(layoutManager);
         adapter = new AdapterSpecialRequest(arrayList);
         recyclerViewWorker.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
     }
     private void initData() {
         String date = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
@@ -70,10 +69,11 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
                         String ri = document.get("reqId").toString();
                         String rm = document.get("reqMessage").toString();
                         String st = document.get("status").toString();
-                        Log.e("", fn+ln+ri+rm+st);
+                        Log.e("req", fn+ln+ri+rm+st);
                         ItemSpecialRequest temp = new ItemSpecialRequest(fn, ln, ri, rm, st);
                         arrayList.add(temp);
                         Log.v("", "" + arrayList.size() + " " + temp.getFirstName());
+                        adapter.notifyDataSetChanged();
                     }
                 }
             }

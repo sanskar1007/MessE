@@ -11,10 +11,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,9 +57,45 @@ public class AdminManageInventoryAddActivity extends AppCompatActivity {
 
             if(sinventory.equals("Utilities")==true) {
                 // update the manage_inventory_ -> utilities to have sname: squantity
+                Map<String,Object> request=new HashMap<>();
+                request.put(sname,squantity);
+                db.collection("manage_inventory").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                            String documentID= DocumentSnapshot.getId();
+                            db.collection("manage_inventory").document("Utilities").update(request);
+                        }
+                    }
+                });
             } else if(sinventory.equals("Stored")==true) {
+                Map<String,Object> request=new HashMap<>();
+                request.put(sname,squantity);
+                db.collection("manage_inventory").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                            String documentID= DocumentSnapshot.getId();
+                            db.collection("manage_inventory").document("Stored").update(request);
+                        }
+                    }
+                });
                 // update the manage_inventory_ -> stored_food to have sname: squantity
             } else if(sinventory.equals("Daily")==true) {
+                Map<String,Object> request=new HashMap<>();
+                request.put(sname,squantity);
+                db.collection("manage_inventory").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                            String documentID= DocumentSnapshot.getId();
+                            db.collection("manage_inventory").document("Daily").update(request);
+                        }
+                    }
+                });
                 // update the manage_inventory_ -> frequently_bought_food to have sname: squantity
             }
 

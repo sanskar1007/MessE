@@ -11,9 +11,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorker.ManageWorkerViewHolder> {
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ArrayList<ItemManageWorker> arrayList;
     public AdapterManageWorker(ArrayList<ItemManageWorker> arrayList){
         this.arrayList=arrayList;
@@ -48,6 +57,22 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     holder.mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_black);
                     double newOverallRating = calculateRating(Integer.parseInt(countRate), Double.parseDouble(overallRate), holder.mwRating.getRating());
                     // update overallrating , count+1 in the database
+                    int count=Integer.parseInt(countRate);
+                    count++;
+                    String newCount=String.valueOf(count);
+                    Map<String,Object> request=new HashMap<>();
+                    request.put("countRating",newCount);
+                    request.put("overallRating",String.valueOf(newOverallRating));
+                    db.collection("worker").whereEqualTo("id",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                                String documentID= DocumentSnapshot.getId();
+                                db.collection("worker").document(documentID).update(request);
+                            }
+                        }
+                    });
                 }
             }
         });

@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -130,9 +131,6 @@ public class AdminManageInventoryUpdateActivity extends AppCompatActivity {
                     }
                 }
             });
-//            list.add("Soap");
-//            list.add("Glasses");
-//            list.add("Plates");
         } else if(sinventoryType.equals("Stored")==true){
             // return the inventory in "list" from stored_food
             DocumentReference docRef = db.collection("manage_inventory").document("Stored");
@@ -160,10 +158,6 @@ public class AdminManageInventoryUpdateActivity extends AppCompatActivity {
                     }
                 }
             });
-//            list.add("Onion");
-//            list.add("Potato");
-//            list.add("Tomato");
-//            list.add("Capsicum");
         } else if(sinventoryType.equals("Daily")==true) {
             // return the inventory in "list" from frequently_bought_food
             DocumentReference docRef = db.collection("manage_inventory").document("Daily");
@@ -191,10 +185,6 @@ public class AdminManageInventoryUpdateActivity extends AppCompatActivity {
                     }
                 }
             });
-//            list.add("Milk");
-//            list.add("Eggs");
-//            list.add("Biscuit");
-//            list.add("Bread");
         }
 
         return list.toArray(new String[0]);
@@ -219,5 +209,7 @@ public class AdminManageInventoryUpdateActivity extends AppCompatActivity {
             }
         });
         currentQuantity.setText(newQuantity.getText().toString());
+        Toast.makeText(this, "Quantity Updated Successfully", Toast.LENGTH_SHORT).show();
+        newQuantity.setText("1");
     }
 }

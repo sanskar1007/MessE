@@ -15,7 +15,6 @@ public class StudentDashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_student_dashboard);
 
         // get links to all the linear layouts
-        LinearLayout checkRefund = (LinearLayout)findViewById(R.id.checkRefund);
         LinearLayout feedback = (LinearLayout)findViewById(R.id.feedback);
         LinearLayout markAbsence = (LinearLayout)findViewById(R.id.markAbsence);
         LinearLayout specialRequest = (LinearLayout)findViewById(R.id.specialRequest);
@@ -40,16 +39,6 @@ public class StudentDashboardActivity extends AppCompatActivity {
                 mParams.height = specialRequest.getWidth();
                 specialRequest.setLayoutParams(mParams);
                 specialRequest.postInvalidate();
-            }
-        });
-        checkRefund.post(new Runnable() {
-            @Override
-            public void run() {
-                LinearLayout.LayoutParams mParams;
-                mParams = (LinearLayout.LayoutParams) checkRefund.getLayoutParams();
-                mParams.height = checkRefund.getWidth();
-                checkRefund.setLayoutParams(mParams);
-                checkRefund.postInvalidate();
             }
         });
         checkMenu.post(new Runnable() {
@@ -86,12 +75,6 @@ public class StudentDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(StudentDashboardActivity.this, StudentSpecialRequestActivity.class));
             }
         });
-        checkRefund.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(StudentDashboardActivity.this, StudentCheckRefundActivity.class));
-            }
-        });
         checkMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,8 +87,5 @@ public class StudentDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(StudentDashboardActivity.this, StudentFeedbackActivity.class));
             }
         });
-
-
-
     }
 }

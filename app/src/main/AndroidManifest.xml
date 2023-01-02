@@ -39,9 +39,6 @@
             android:name=".CheckMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".WorkerCheckSalaryActivity"
-            android:exported="false" />
-        <activity
             android:name=".AdminRequestRecievedActivity"
             android:exported="false" />
         <activity
@@ -55,9 +52,6 @@
             android:exported="false" />
         <activity
             android:name=".StudentFeedbackActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StudentCheckRefundActivity"
             android:exported="false" />
         <activity
             android:name=".StudentSpecialRequestActivity"

@@ -47,7 +47,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         email = findViewById(R.id.adminLoginEmailEditText);
         password = findViewById(R.id.adminLoginPasswordEditText);
         // please enter your code here and remove the below line
-        //startActivity(new Intent(StudentLoginActivity.this, StudentDashboardActivity.class));
+        startActivity(new Intent(StudentLoginActivity.this, StudentDashboardActivity.class));
     }
 
     public void googleLogin(View view) {

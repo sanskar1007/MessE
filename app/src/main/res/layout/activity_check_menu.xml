@@ -169,22 +169,23 @@
             android:id="@+id/checkMenuText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
             android:text="Select Day"
             android:textColor="@color/white"
             android:layout_above="@+id/checkMenuSpinner"
             android:layout_centerHorizontal="true" />
+
         <Spinner
             android:id="@+id/checkMenuSpinner"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="#FFFFFF"
             android:textColor="#FFFFFF"
-            tools:ignore="MissingConstraints"
-            android:layout_alignParentBottom="true"/>
+            tools:ignore="MissingConstraints" />
 
 
     </RelativeLayout>

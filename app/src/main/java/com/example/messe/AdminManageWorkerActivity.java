@@ -39,9 +39,6 @@ public class AdminManageWorkerActivity extends AppCompatActivity {
 //        arrayList.add(new ItemManageWorker("D", "D", "19ucs165", "4.5", "50", "Null"));
 //        arrayList.add(new ItemManageWorker("E", "E", "19ucs166", "1.5", "10", "Null"));
 
-
-
-
         recyclerViewWorker = findViewById(R.id.adminManageWorkerRecyclerView);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);

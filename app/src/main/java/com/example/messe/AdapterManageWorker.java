@@ -117,7 +117,6 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
 
         public void setData(String heading, String rate, String stat, String count) {
             mwItemId.setText(heading);
-
             if(stat.equals("True")==true){
                 mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
                 mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);

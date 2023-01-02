@@ -36,13 +36,38 @@
         <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_worker_special_request.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_workey_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/layout_circle.xml" value="0.125" />
-        <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable-v24/layout_bottom_left_round_rect_white.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable-v24/layout_bottom_right_round_rect_white.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_left_round_rect_black.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_left_round_rect_green.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_right_round_rect_black.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_login.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_add.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_daily.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_order.xml" value="0.12817028985507245" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_update.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_worker.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved.xml" value="0.15555555555555556" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved_student.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_request_recieved_worker.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_sell_coupon.xml" value="0.12817028985507245" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_dashboard.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_feedback.xml" value="0.15489130434782608" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_mark_absence.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_worker_login.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_worker_special_request.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/background_spinner_white.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_student.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_student1.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/fragment_admin_request_recieved_worker.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/item_manage_worker.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/item_special_request.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_request_recieved.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_sell_coupon.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_check_menu.xml" value="0.1265625" />
-        <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_student_login.xml" value="0.2" />
-        <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_student_special_request.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/fragment_admin_request_recieved_worker.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/item_special_request.xml" value="0.21784420289855072" />
       </map>

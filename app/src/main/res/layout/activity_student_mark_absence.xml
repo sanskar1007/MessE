@@ -4,6 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".StudentMarkAbsenceActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/layout_round_rect_white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/workerSpecialRequestButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/studentMarkAbsenceDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Type your request"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/studentMarkAbsenceBar"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary"
+            android:text=""
+            android:layout_marginBottom="20dp"/>
+
+        <CheckBox
+            android:id="@+id/studentMarkAbsenceBreakfastCheckbox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="BREAKFAST"
+            android:textSize="18sp"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="center"
+            tools:ignore="RtlCompat"
+            android:layoutDirection="rtl"/>
+        <CheckBox
+            android:id="@+id/studentMarkAbsenceLunchCheckbox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="LUNCH"
+            android:textSize="18sp"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="center"
+            tools:ignore="RtlCompat"
+            android:layoutDirection="rtl"/>
+        <CheckBox
+            android:id="@+id/studentMarkAbsenceSnacksCheckbox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="SNACKS"
+            android:textSize="18sp"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="center"
+            tools:ignore="RtlCompat"
+            android:layoutDirection="rtl"/>
+        <CheckBox
+            android:id="@+id/studentMarkAbsenceDinnerCheckbox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="DINNNER"
+            android:textSize="18sp"
+            android:textAlignment="viewEnd"
+            android:layout_gravity="center"
+            tools:ignore="RtlCompat"
+            android:layoutDirection="rtl"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/workerSpecialRequestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:background="@drawable/layout_round_rect_white"
+        android:paddingLeft="50dp"
+        android:paddingTop="10dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="10dp"
+        android:text="SUBMIT"
+        android:textSize="20sp"
+        android:onClick="submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

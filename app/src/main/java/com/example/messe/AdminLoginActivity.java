@@ -37,6 +37,9 @@ public class AdminLoginActivity extends AppCompatActivity {
         password = findViewById(R.id.adminLoginPasswordEditText);
         email.setText(sharedUsername);
         password.setText(sharedPassword);
+        if(sharedUsername!=""){
+            startActivity(new Intent(AdminLoginActivity.this, AdminDashboardActivity.class));
+        }
     }
     boolean helper;
     private void testToast() {

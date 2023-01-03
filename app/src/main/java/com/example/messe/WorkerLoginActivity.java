@@ -36,6 +36,11 @@ public class WorkerLoginActivity extends AppCompatActivity {
         password = findViewById(R.id.workerLoginPasswordEditText);
         email.setText(sharedUsername);
         password.setText(sharedPassword);
+        if(sharedUsername!=""){
+            Intent i = new Intent(getApplicationContext(), WorkerDashboardActivity.class);
+            i.putExtra("Value1", sharedUsername);
+            startActivity(i);
+        }
     }
     boolean helper;
     private void testToast() {

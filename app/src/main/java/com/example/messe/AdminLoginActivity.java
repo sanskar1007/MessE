@@ -16,15 +16,27 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import android.content.SharedPreferences;
+
 
 public class AdminLoginActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     TextView email, password;
+    private static final String PREFS_NAME = "MyPrefsFile1";
+    private static final String USERNAME_KEY = "username";
+    private static final String PASSWORD_KEY = "password";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        String sharedUsername = settings.getString(USERNAME_KEY, "");
+        String sharedPassword = settings.getString(PASSWORD_KEY,"");
+        email = findViewById(R.id.adminLoginEmailEditText);
+        password = findViewById(R.id.adminLoginPasswordEditText);
+        email.setText(sharedUsername);
+        password.setText(sharedPassword);
     }
     boolean helper;
     private void testToast() {
@@ -48,6 +60,11 @@ public class AdminLoginActivity extends AppCompatActivity {
                         Log.w("TAG", pass);
                         if(Integer.parseInt(pass)==Integer.parseInt(document.get("Password").toString())){
                             Log.w("TAG", pass);
+                            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                            SharedPreferences.Editor editor = settings.edit();
+                            editor.putString(USERNAME_KEY, id);
+                            editor.putString(PASSWORD_KEY, pass);
+                            editor.apply();
                             startActivity(new Intent(AdminLoginActivity.this, AdminDashboardActivity.class));
                             helper=true;
                         }
@@ -61,6 +78,6 @@ public class AdminLoginActivity extends AppCompatActivity {
             public void run() {
                 testToast();
             }
-        }, 1000);
+        }, 2000);
     }
 }

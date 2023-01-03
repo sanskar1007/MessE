@@ -14,6 +14,8 @@ public class WorkerDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worker_dashboard);
         // get links to all the linear layouts
+        Bundle extras = getIntent().getExtras();
+        String id = extras.getString("Value1");
         LinearLayout checkMenu = (LinearLayout)findViewById(R.id.checkMenu);
         LinearLayout specialRequest = (LinearLayout)findViewById(R.id.specialRequest);
         LinearLayout foodDemand = (LinearLayout)findViewById(R.id.foodDemand);
@@ -63,7 +65,9 @@ public class WorkerDashboardActivity extends AppCompatActivity {
         specialRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WorkerDashboardActivity.this, WorkerSpecialRequestActivity.class));
+                Intent i = new Intent(getApplicationContext(), WorkerSpecialRequestActivity.class);
+                i.putExtra("Value1", id);
+                startActivity(i);
             }
         });
         foodDemand.setOnClickListener(new View.OnClickListener() {

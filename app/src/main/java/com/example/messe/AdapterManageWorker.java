@@ -34,19 +34,23 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_manage_worker, parent, false);
         return new AdapterManageWorker.ManageWorkerViewHolder(v);
     }
-
+    public String roundTo2Decimal(String s){
+        if(s.length()<=3) return s;
+        else return s.substring(0,3);
+    }
     @Override
     public void onBindViewHolder(@NonNull AdapterManageWorker.ManageWorkerViewHolder holder, int position) {
         String fName = arrayList.get(position).getFirstName();
         String lName = arrayList.get(position).getLastName();
         String id = arrayList.get(position).getId();
         String stat = arrayList.get(position).getStatus();
-        String overallRate = arrayList.get(position).getOverallRating();
+        String overallRate = roundTo2Decimal(arrayList.get(position).getOverallRating());
+        final String atten = arrayList.get(position).getAttendance();
         String countRate = arrayList.get(position).getCountRating();
 
         String heading = "" + fName + " " + lName + " (" + id +")";
 
-        holder.setData(heading, overallRate, stat, countRate);
+        holder.setData(heading, overallRate, countRate, atten, stat);
 
         holder.mwPresent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +61,14 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     holder.mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_black);
                     double newOverallRating = calculateRating(Integer.parseInt(countRate), Double.parseDouble(overallRate), holder.mwRating.getRating());
                     // update overallrating , count+1 in the database
-                    int count=Integer.parseInt(countRate);
-                    count++;
-                    String newCount=String.valueOf(count);
+                    int count=Integer.parseInt(countRate)+1;
+                    String newCount = String.valueOf(count);
                     Map<String,Object> request=new HashMap<>();
                     request.put("countRating",newCount);
-                    request.put("overallRating",String.valueOf(newOverallRating));
+                    request.put("overallRating",roundTo2Decimal(String.valueOf(newOverallRating)));
+                    String newAtten = ""+(Integer.parseInt(atten)+1);
+                    request.put("attendance",newAtten);
+                    holder.setData(heading, roundTo2Decimal(String.valueOf(newOverallRating)), countRate, newAtten, "True");
                     db.collection("worker").whereEqualTo("id",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -84,7 +90,6 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     holder.mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);
                     holder.mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
                     double newOverallRating = calculateRating(Integer.parseInt(countRate), Double.parseDouble(overallRate), holder.mwRating.getRating());
-                    // update overallrating , count+1 in the database
                 }
             }
         });
@@ -104,7 +109,7 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
     }
 
     public static class ManageWorkerViewHolder extends RecyclerView.ViewHolder{
-        TextView mwItemId;
+        TextView mwItemId, mwAttendance, mwCurrentRating;
         RatingBar mwRating;
         Button mwPresent, mwAbsent;
         public ManageWorkerViewHolder(@NonNull View itemView) {
@@ -113,16 +118,21 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
             mwPresent = itemView.findViewById(R.id.manageWorkerItemPresent);
             mwAbsent = itemView.findViewById(R.id.manageWorkerItemAbsent);
             mwRating = itemView.findViewById(R.id.manageWorkerRating);
+            mwAttendance = itemView.findViewById(R.id.manageWorkerCurrentAttendance);
+            mwCurrentRating = itemView.findViewById(R.id.manageWorkerCurrentRating);
         }
 
-        public void setData(String heading, String rate, String stat, String count) {
+        public void setData(String heading, String rate, String count, String atten, String stat) {
             mwItemId.setText(heading);
+            mwCurrentRating.setText(rate);
+            mwAttendance.setText(atten);
+
             if(stat.equals("True")==true){
-                mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
-                mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);
-            } else if(stat.equals("False")==true){
                 mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_green);
                 mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_black);
+            } else if(stat.equals("False")==true){
+                mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
+                mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);
             } else {
                 mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_white);
                 mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_white);

@@ -6,16 +6,18 @@ public class ItemManageWorker {
     private String id;
     private String overallRating;
     private String countRating;
+    private String attendance;
     private String date;
     private String status;
 
-    public ItemManageWorker(String firstName, String lastName, String id, String overallRating, String countRating, String status) {
+    public ItemManageWorker(String firstName, String lastName, String id, String overallRating, String countRating, String attendance,String status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
         this.overallRating = overallRating;
         this.countRating = countRating;
         this.status = status;
+        this.attendance = attendance;
     }
 
     public String getFirstName() {
@@ -36,6 +38,10 @@ public class ItemManageWorker {
 
     public String getCountRating() {
         return countRating;
+    }
+
+    public String getAttendance() {
+        return attendance;
     }
 
     public String getStatus() {
@@ -60,6 +66,10 @@ public class ItemManageWorker {
 
     public void setCountRating(String countRating) {
         this.countRating = countRating;
+    }
+
+    public void setAttendance(String attendance) {
+        this.attendance = attendance;
     }
 
     public void setStatus(String status) {

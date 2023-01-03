@@ -34,7 +34,7 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
     RecyclerView recyclerViewWorker;
     LinearLayoutManager layoutManager;
     ArrayList<ItemSpecialRequest> arrayList = new ArrayList<>();
-    AdapterSpecialRequest adapter;
+    AdapterSpecialRequestWorker adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerViewWorker.setLayoutManager(layoutManager);
-        adapter = new AdapterSpecialRequest(arrayList);
+        adapter = new AdapterSpecialRequestWorker(arrayList);
         recyclerViewWorker.setAdapter(adapter);
 
     }

@@ -59,11 +59,12 @@ public class AdminManageWorkerActivity extends AppCompatActivity {
                         String oar = document.get("overallRating").toString();
                         String cr = document.get("countRating").toString();
                         String a = document.get("attendance").toString();
+                        String lad = document.get("lastAttendanceDate").toString();
                         String st = document.get("status").toString();
 
                         Log.e("", fn + " " + ln + " " + mi + " " + oar + " " + cr + " "+ a + " " + st);
 
-                        ItemManageWorker temp = new ItemManageWorker(fn, ln, mi, oar, cr, a,st);
+                        ItemManageWorker temp = new ItemManageWorker(fn, ln, mi, oar, cr, a, lad, st);
                         arrayList.add(temp);
                         Log.v("", "" + arrayList.size() + " " + temp.getFirstName());
                         adapter.notifyDataSetChanged();

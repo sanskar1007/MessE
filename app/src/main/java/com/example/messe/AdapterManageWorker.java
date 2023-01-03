@@ -17,7 +17,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,10 +36,22 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_manage_worker, parent, false);
         return new AdapterManageWorker.ManageWorkerViewHolder(v);
     }
+
     public String roundTo2Decimal(String s){
         if(s.length()<=3) return s;
         else return s.substring(0,3);
     }
+    public String getTodayDate(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        String dateArray[] = formatter.format(date).toString().split(" ");
+        String today = dateArray[0];
+        return today;
+    }
+    public boolean isAttendanceMarked(String lastAttendanceDate){
+        return lastAttendanceDate.equals(getTodayDate());
+    }
+
     @Override
     public void onBindViewHolder(@NonNull AdapterManageWorker.ManageWorkerViewHolder holder, int position) {
         String fName = arrayList.get(position).getFirstName();
@@ -46,11 +60,19 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
         String stat = arrayList.get(position).getStatus();
         String overallRate = roundTo2Decimal(arrayList.get(position).getOverallRating());
         final String atten = arrayList.get(position).getAttendance();
+        String lastAttenDate = arrayList.get(position).getLastAttendanceDate();
         String countRate = arrayList.get(position).getCountRating();
+
 
         String heading = "" + fName + " " + lName + " (" + id +")";
 
-        holder.setData(heading, overallRate, countRate, atten, stat);
+        // if attendance is marked for today
+        if(isAttendanceMarked(lastAttenDate)){
+            holder.setData(heading, overallRate, atten, stat);
+        } else {
+            arrayList.get(holder.getAdapterPosition()).setStatus("Null");
+            holder.setData(heading, overallRate, atten, "Null");
+        }
 
         holder.mwPresent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,12 +85,15 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     // update overallrating , count+1 in the database
                     int count=Integer.parseInt(countRate)+1;
                     String newCount = String.valueOf(count);
+                    String newAtten = ""+(Integer.parseInt(atten)+1);
+
                     Map<String,Object> request=new HashMap<>();
                     request.put("countRating",newCount);
                     request.put("overallRating",roundTo2Decimal(String.valueOf(newOverallRating)));
-                    String newAtten = ""+(Integer.parseInt(atten)+1);
                     request.put("attendance",newAtten);
-                    holder.setData(heading, roundTo2Decimal(String.valueOf(newOverallRating)), countRate, newAtten, "True");
+                    request.put("status", "True");
+                    request.put("lastAttendanceDate", getTodayDate());
+                    holder.setData(heading, roundTo2Decimal(String.valueOf(newOverallRating)), newAtten, "True");
                     db.collection("worker").whereEqualTo("id",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -90,6 +115,20 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     holder.mwAbsent.setBackgroundResource(R.drawable.layout_bottom_right_round_rect_green);
                     holder.mwPresent.setBackgroundResource(R.drawable.layout_bottom_left_round_rect_black);
                     double newOverallRating = calculateRating(Integer.parseInt(countRate), Double.parseDouble(overallRate), holder.mwRating.getRating());
+                    Map<String,Object> request=new HashMap<>();
+                    request.put("status", "False");
+                    request.put("lastAttendanceDate", getTodayDate());
+                    holder.setData(heading, overallRate, atten, "False");
+                    db.collection("worker").whereEqualTo("id",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                DocumentSnapshot DocumentSnapshot=task.getResult().getDocuments().get(0);
+                                String documentID= DocumentSnapshot.getId();
+                                db.collection("worker").document(documentID).update(request);
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -122,7 +161,7 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
             mwCurrentRating = itemView.findViewById(R.id.manageWorkerCurrentRating);
         }
 
-        public void setData(String heading, String rate, String count, String atten, String stat) {
+        public void setData(String heading, String rate, String atten, String stat) {
             mwItemId.setText(heading);
             mwCurrentRating.setText(rate);
             mwAttendance.setText(atten);

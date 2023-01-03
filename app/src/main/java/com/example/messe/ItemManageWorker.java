@@ -7,10 +7,10 @@ public class ItemManageWorker {
     private String overallRating;
     private String countRating;
     private String attendance;
-    private String date;
+    private String lastAttendanceDate;
     private String status;
 
-    public ItemManageWorker(String firstName, String lastName, String id, String overallRating, String countRating, String attendance,String status) {
+    public ItemManageWorker(String firstName, String lastName, String id, String overallRating, String countRating, String attendance, String lastAttendanceDate,String status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
@@ -18,6 +18,7 @@ public class ItemManageWorker {
         this.countRating = countRating;
         this.status = status;
         this.attendance = attendance;
+        this.lastAttendanceDate = lastAttendanceDate;
     }
 
     public String getFirstName() {
@@ -48,6 +49,8 @@ public class ItemManageWorker {
         return status;
     }
 
+    public String getLastAttendanceDate() {return lastAttendanceDate;}
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -75,4 +78,6 @@ public class ItemManageWorker {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public void setLastAttendanceDate(String lastAttendanceDate) {this.lastAttendanceDate = lastAttendanceDate;}
 }

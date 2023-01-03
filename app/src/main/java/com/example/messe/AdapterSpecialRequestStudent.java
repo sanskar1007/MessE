@@ -1,8 +1,5 @@
 package com.example.messe;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,29 +13,28 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AdapterSpecialRequest extends RecyclerView.Adapter<AdapterSpecialRequest.SpecialRequestViewHolder> {
+public class AdapterSpecialRequestStudent extends RecyclerView.Adapter<AdapterSpecialRequestStudent.SpecialRequestViewHolder> {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ArrayList<ItemSpecialRequest> arrayList;
-    public AdapterSpecialRequest(ArrayList<ItemSpecialRequest> arrayList){
+    public AdapterSpecialRequestStudent(ArrayList<ItemSpecialRequest> arrayList){
         this.arrayList=arrayList;
     }
 
     @NonNull
     @Override
-    public AdapterSpecialRequest.SpecialRequestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterSpecialRequestStudent.SpecialRequestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_special_request, parent, false);
         return new SpecialRequestViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterSpecialRequest.SpecialRequestViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterSpecialRequestStudent.SpecialRequestViewHolder holder, int position) {
         final String fName = arrayList.get(position).getFirstName();
         final String lName = arrayList.get(position).getLastName();
         final String rId = arrayList.get(position).getReqId();

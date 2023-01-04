@@ -1,6 +1,7 @@
 package com.example.messe;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,10 +60,14 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
         String id = arrayList.get(position).getId();
         String stat = arrayList.get(position).getStatus();
         String overallRate = roundTo2Decimal(arrayList.get(position).getOverallRating());
-        final String atten = arrayList.get(position).getAttendance();
+        String atten = arrayList.get(position).getAttendance();
         String lastAttenDate = arrayList.get(position).getLastAttendanceDate();
+        String[] arrOfStr = lastAttenDate.split("/", 2);
         String countRate = arrayList.get(position).getCountRating();
-
+        Log.d("Tag",arrOfStr[0]);
+        if(arrOfStr[0]=="01"){
+            atten="0";
+        }
 
         String heading = "" + fName + " " + lName + " (" + id +")";
 
@@ -74,6 +79,7 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
             holder.setData(heading, overallRate, atten, "Null");
         }
 
+        String finalAtten = atten;
         holder.mwPresent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +91,7 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     // update overallrating , count+1 in the database
                     int count=Integer.parseInt(countRate)+1;
                     String newCount = String.valueOf(count);
-                    String newAtten = ""+(Integer.parseInt(atten)+1);
+                    String newAtten = ""+(Integer.parseInt(finalAtten)+1);
 
                     Map<String,Object> request=new HashMap<>();
                     request.put("countRating",newCount);
@@ -118,7 +124,7 @@ public class AdapterManageWorker extends RecyclerView.Adapter<AdapterManageWorke
                     Map<String,Object> request=new HashMap<>();
                     request.put("status", "False");
                     request.put("lastAttendanceDate", getTodayDate());
-                    holder.setData(heading, overallRate, atten, "False");
+                    holder.setData(heading, overallRate, finalAtten, "False");
                     db.collection("worker").whereEqualTo("id",id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {

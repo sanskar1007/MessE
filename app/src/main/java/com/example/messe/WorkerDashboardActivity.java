@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class WorkerDashboardActivity extends AppCompatActivity {
-
+    private long pressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,5 +77,17 @@ public class WorkerDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(WorkerDashboardActivity.this, FoodDemandActivity.class));
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        if (pressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+            finish();
+            moveTaskToBack(true);
+            System.exit(0);
+        } else {
+            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
     }
 }

@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class StudentDashboardActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class StudentDashboardActivity extends AppCompatActivity {
+    FirebaseAuth auth=FirebaseAuth.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +96,11 @@ public class StudentDashboardActivity extends AppCompatActivity {
 
         String sid = "", fname = "", lname = "";
         // from data base store the first name and last and id in above variables
-
+        String name=auth.getCurrentUser().getDisplayName();
+        sid=auth.getCurrentUser().getEmail();
+        String[] arrSplit = name.split("\\s");
+        fname=arrSplit[0];
+        lname=arrSplit[1];
         // code end here
 
         idTV.setText("ID: " + sid);
@@ -102,6 +108,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
     }
 
     public void logout(View view) {
-
+        auth.signOut();
+        finish();
     }
 }

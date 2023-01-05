@@ -61,14 +61,16 @@ public class AdminLoginActivity extends AppCompatActivity {
                     for(QueryDocumentSnapshot document : task.getResult()){
                         Log.w("TAG", document.get("Password").toString());
                         Log.w("TAG", pass);
-                        if(Integer.parseInt(pass)==Integer.parseInt(document.get("Password").toString())){
+                        if(pass.equals(document.get("Password").toString())){
                             Log.w("TAG", pass);
                             SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
                             SharedPreferences.Editor editor = settings.edit();
                             editor.putString(USERNAME_KEY, id);
                             editor.putString(PASSWORD_KEY, pass);
                             editor.apply();
-                            startActivity(new Intent(AdminLoginActivity.this, AdminDashboardActivity.class));
+                            Intent i = new Intent(getApplicationContext(), AdminDashboardActivity.class);
+                            i.putExtra("Value1", id);
+                            startActivity(i);
                             helper=true;
                         }
                     }

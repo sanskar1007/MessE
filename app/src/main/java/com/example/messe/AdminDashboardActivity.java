@@ -35,6 +35,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         LinearLayout checkMenu = (LinearLayout)findViewById(R.id.checkMenu);
         LinearLayout requestRecieved = (LinearLayout)findViewById(R.id.requestRecieved);
         LinearLayout foodDemand = (LinearLayout)findViewById(R.id.foodDemand);
+        LinearLayout editMenu = (LinearLayout)findViewById(R.id.editMenu);
         // set the height of all the linear layout to be same as width
         manageInventory.post(new Runnable() {
             @Override
@@ -96,6 +97,16 @@ public class AdminDashboardActivity extends AppCompatActivity {
                 foodDemand.postInvalidate();
             }
         });
+        editMenu.post(new Runnable() {
+            @Override
+            public void run() {
+                LinearLayout.LayoutParams mParams;
+                mParams = (LinearLayout.LayoutParams) editMenu.getLayoutParams();
+                mParams.height = editMenu.getWidth();
+                editMenu.setLayoutParams(mParams);
+                editMenu.postInvalidate();
+            }
+        });
 
         // go to respective activity on clicking the options of student dashboard
         manageInventory.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +143,12 @@ public class AdminDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AdminDashboardActivity.this, FoodDemandActivity.class));
+            }
+        });
+        editMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AdminDashboardActivity.this, AdminEditMenuActivity.class));
             }
         });
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WorkerDashboardActivity extends AppCompatActivity {
@@ -77,6 +78,19 @@ public class WorkerDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(WorkerDashboardActivity.this, FoodDemandActivity.class));
             }
         });
+
+        TextView idTV = findViewById(R.id.workerDashboardId);
+        TextView nameTV = findViewById(R.id.workerDashboardName);
+
+        String sid = "", fname = "", lname = "";
+        // from data base store the first name and last and id in above variables
+
+        // code end here
+
+        idTV.setText("ID: " + sid);
+        nameTV.setText("Name: " + fname + " " + lname);
+
+
     }
     @Override
     public void onBackPressed() {
@@ -89,5 +103,9 @@ public class WorkerDashboardActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
         }
         pressedTime = System.currentTimeMillis();
+    }
+
+    public void logout(View view) {
+
     }
 }

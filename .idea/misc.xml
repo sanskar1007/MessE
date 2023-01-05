@@ -37,9 +37,12 @@
         <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/activity_workey_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android/MessE/app/src/main/res/layout/layout_circle.xml" value="0.125" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/drawable/layout_bottom_left_round_rect_black.xml" value="0.1" />
-        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_add.xml" value="0.1" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_admin_manage_inventory_order.xml" value="0.22" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_dashboard.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_student_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/activity_worker_dashboard.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/ADMIN/Desktop/android3/MessE/app/src/main/res/layout/item_manage_worker.xml" value="0.1" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Hp/StudioProjects/MessEBTP-master/app/src/main/res/layout/activity_admin_manage_inventory.xml" value="0.21784420289855072" />

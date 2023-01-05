@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class StudentDashboardActivity extends AppCompatActivity {
 
@@ -87,5 +88,20 @@ public class StudentDashboardActivity extends AppCompatActivity {
                 startActivity(new Intent(StudentDashboardActivity.this, StudentFeedbackActivity.class));
             }
         });
+
+        TextView idTV = findViewById(R.id.studentDashboardId);
+        TextView nameTV = findViewById(R.id.studentDashboardName);
+
+        String sid = "", fname = "", lname = "";
+        // from data base store the first name and last and id in above variables
+
+        // code end here
+
+        idTV.setText("ID: " + sid);
+        nameTV.setText("Name: " + fname + " " + lname);
+    }
+
+    public void logout(View view) {
+
     }
 }

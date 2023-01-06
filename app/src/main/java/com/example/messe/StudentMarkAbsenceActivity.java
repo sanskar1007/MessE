@@ -21,7 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,13 +41,27 @@ public class StudentMarkAbsenceActivity extends AppCompatActivity {
     private static final String PREFS_NAME = "MyPrefsFile2";
     private static final String dateshared = "date";
     Map<String, Object> demand = new HashMap<>();
-
+    String tomorrow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_mark_absence);
         TextView adminSellCouponDate = findViewById(R.id.studentMarkAbsenceDate);
-        adminSellCouponDate.setText("Date: " + dateArray[0]);
+
+        String today = dateArray[0];
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = null;
+        try {
+            date = sdf.parse(today);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, 1);
+        Date tomorrowDate = cal.getTime();
+        tomorrow = sdf.format(tomorrowDate);
+        adminSellCouponDate.setText("Date: " + tomorrow);
 
         breakfast = findViewById(R.id.studentMarkAbsenceBreakfastCheckbox);
         lunch = findViewById(R.id.studentMarkAbsenceLunchCheckbox);
@@ -66,7 +82,7 @@ public class StudentMarkAbsenceActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(dateshared, dateArray[0]);
         editor.apply();
-        db.collection("food_demand").whereEqualTo("date", dateArray[0]).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("food_demand").whereEqualTo("date", tomorrow).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {

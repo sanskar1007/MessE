@@ -63,8 +63,9 @@ public class AdminRequestRecievedWorkerActivity extends AppCompatActivity {
                         String ri = document.get("reqId").toString();
                         String rm = document.get("reqMessage").toString();
                         String st = document.get("status").toString();
+                        String d = document.get("Date").toString();
                         Log.e("", fn+ln+ri+rm+st);
-                        ItemSpecialRequest temp = new ItemSpecialRequest(fn, ln, ri, rm, st);
+                        ItemSpecialRequest temp = new ItemSpecialRequest(fn, ln, ri, rm, st, d);
                         arrayList.add(temp);
                         Log.v("", "" + arrayList.size() + " " + temp.getFirstName());
                         adapter.notifyDataSetChanged();

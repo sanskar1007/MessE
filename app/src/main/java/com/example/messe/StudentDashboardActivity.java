@@ -75,7 +75,7 @@ public class StudentDashboardActivity extends AppCompatActivity {
         specialRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StudentDashboardActivity.this, StudentSpecialRequestActivity.class));
+                startActivity(new Intent(StudentDashboardActivity.this, StudentSpecialRequestHelperActivity.class));
             }
         });
         checkMenu.setOnClickListener(new View.OnClickListener() {

@@ -16,6 +16,18 @@
         android:theme="@style/Theme.MessE"
         tools:targetApi="31">
         <activity
+            android:name=".WorkerSpecialRequestStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WorkerSpecialRequestHelperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentSpecialRequestStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentSpecialRequestHelperActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminEditMenuActivity"
             android:exported="false" />
         <activity

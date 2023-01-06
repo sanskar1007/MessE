@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/layout_round_rect_white">
+
+        <TextView
+            android:id="@+id/requestStatusItemDate"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="01-01-2000"
+            android:gravity="center_horizontal"
+            android:textSize="26sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:text=""
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/requestStatusItemReqMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I want jain food"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/requestStatusItemStatus"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Status: Null"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:padding="40dp"
+            android:textColor="@color/black"
+            android:background="@drawable/layout_bottom_round_rect_white"/>
+    </LinearLayout>
+</RelativeLayout>

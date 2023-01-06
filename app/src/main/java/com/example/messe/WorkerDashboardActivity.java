@@ -34,8 +34,6 @@ public class WorkerDashboardActivity extends AppCompatActivity {
         LinearLayout foodDemand = (LinearLayout)findViewById(R.id.foodDemand);
 
         // set the height of all the linear layout to be same as width
-
-
         checkMenu.post(new Runnable() {
             @Override
             public void run() {
@@ -78,7 +76,7 @@ public class WorkerDashboardActivity extends AppCompatActivity {
         specialRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), WorkerSpecialRequestActivity.class);
+                Intent i = new Intent(getApplicationContext(), WorkerSpecialRequestHelperActivity.class);
                 i.putExtra("Value1", id);
                 startActivity(i);
             }

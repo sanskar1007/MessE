@@ -17,9 +17,6 @@ public class AdapterRequestStatus extends RecyclerView.Adapter<AdapterRequestSta
         this.arrayList=arrayList;
     }
 
-
-
-
     @NonNull
     @Override
     public AdapterRequestStatus.RequestStatusViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

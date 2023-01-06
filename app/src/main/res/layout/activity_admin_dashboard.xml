@@ -220,7 +220,6 @@
                         android:background="@drawable/layout_round_rect_pink"
                         android:orientation="vertical">
 
-
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

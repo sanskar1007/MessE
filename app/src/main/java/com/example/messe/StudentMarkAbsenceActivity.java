@@ -157,7 +157,7 @@ public class StudentMarkAbsenceActivity extends AppCompatActivity {
             demand.put("lunch", lunchdb);
             demand.put("snacks", snacksdb);
             demand.put("dinner", dinnerdb);
-            demand.put("date", dateArray[0]);
+            demand.put("date", tomorrow);
             DocumentReference food_demand = db.collection("food_demand").document();
             food_demand.set(demand);
         }

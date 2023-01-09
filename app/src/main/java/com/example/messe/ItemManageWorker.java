@@ -10,6 +10,7 @@ public class ItemManageWorker {
     private String lastAttendanceDate;
     private String status;
 
+    public ItemManageWorker(){}
     public ItemManageWorker(String firstName, String lastName, String id, String overallRating, String countRating, String attendance, String lastAttendanceDate,String status) {
         this.firstName = firstName;
         this.lastName = lastName;

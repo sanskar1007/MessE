@@ -32,7 +32,7 @@ public class WorkerDashboardActivity extends AppCompatActivity {
         LinearLayout checkMenu = (LinearLayout)findViewById(R.id.checkMenu);
         LinearLayout specialRequest = (LinearLayout)findViewById(R.id.specialRequest);
         LinearLayout foodDemand = (LinearLayout)findViewById(R.id.foodDemand);
-
+        LinearLayout checkSalary = (LinearLayout)findViewById(R.id.checkSalary);
         // set the height of all the linear layout to be same as width
         checkMenu.post(new Runnable() {
             @Override
@@ -64,6 +64,16 @@ public class WorkerDashboardActivity extends AppCompatActivity {
                 foodDemand.postInvalidate();
             }
         });
+        checkSalary.post(new Runnable() {
+            @Override
+            public void run() {
+                LinearLayout.LayoutParams mParams;
+                mParams = (LinearLayout.LayoutParams) checkSalary.getLayoutParams();
+                mParams.height = checkSalary.getWidth();
+                checkSalary.setLayoutParams(mParams);
+                checkSalary.postInvalidate();
+            }
+        });
 
         // go to respective activity on clicking the options of student dashboard
 
@@ -85,6 +95,14 @@ public class WorkerDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(WorkerDashboardActivity.this, FoodDemandActivity.class));
+            }
+        });
+        checkSalary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), WorkerCheckSalaryActivity.class);
+                i.putExtra("Value1", id);
+                startActivity(i);
             }
         });
 

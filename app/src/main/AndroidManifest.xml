@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MessE"
         tools:targetApi="31">
         <activity
+            android:name=".WorkerCheckSalaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".WorkerSpecialRequestStatusActivity"
             android:exported="false" />
         <activity

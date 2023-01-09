@@ -16,9 +16,7 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
     private ArrayList<ItemInventory> arrayList;
     public AdapterInventory(ArrayList<ItemInventory> arrayList) {this.arrayList = arrayList;}
 
-    public ArrayList<ItemInventory> getArrayList() {
-        return arrayList;
-    }
+    public ArrayList<ItemInventory> getArrayList() {return arrayList;}
 
     @NonNull
     @Override
@@ -35,6 +33,7 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
 
         holder.setData(nameItem, quantityItem, "0");
 
+        // increase the count of the current item to be ordered
         holder.miIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +43,7 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
             }
         });
 
+        // decrease the count of the current item to be ordered
         holder.miDecrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +54,6 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
                 holder.setData(nameItem, quantityItem,""+count);
             }
         });
-
     }
 
     @Override
@@ -62,12 +61,15 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
         return arrayList.size();
     }
 
+    // Inner class
     public class InventoryViewHolder extends RecyclerView.ViewHolder{
+        // Views of the item_inventory
         TextView miName, miCurrQuantity, miCount;
         Button miIncrease, miDecrease;
 
         public InventoryViewHolder(@NonNull View itemView) {
             super(itemView);
+            // link the views from the layout
             miName = itemView.findViewById(R.id.inventoryItemName);
             miCurrQuantity = itemView.findViewById(R.id.inventoryItemCurrentQuantity);
             miCount = itemView.findViewById(R.id.inventoryItemCount);
@@ -75,6 +77,7 @@ public class AdapterInventory extends RecyclerView.Adapter<AdapterInventory.Inve
             miDecrease = itemView.findViewById(R.id.inventoryItemDecreaseButton);
         }
 
+        // set the data of current item
         public void setData(String nameItem, String quantityItem, String countItem) {
             miName.setText(nameItem);
             miCurrQuantity.setText(quantityItem);
